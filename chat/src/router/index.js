@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Chat from '@/components/chat';
+import Chat from '@/components/Chat';
 
 Vue.use(Router);
 
