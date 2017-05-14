@@ -1,5 +1,3 @@
-{"text":"test","date":"2017-05-01T14:32:49.593Z","_id":"Z7VJuDa7yg7TE2mZ"}
-{"text":"123","date":"2017-05-01T14:32:54.665Z","_id":"iXlkJ9ywzJFoyYaR"}
-{"text":"123","date":"2017-05-01T14:32:57.547Z","_id":"vaBkWcFSCxeUUgQn"}
-{"text":"123","date":"2017-05-01T14:32:58.429Z","_id":"mrm2er7cB8Yxlf6A"}
-{"text":"123","date":"2017-05-01T14:32:59.770Z","_id":"waNecr0Fg8tE76iI"}
+{"id":"m_1494722478630","text":"hello\n","timestamp":1494722478630,"threadID":"t_1","threadName":"me, myself and i","authorName":"der michmeister","_id":"Hac2HgySYTMqxTNU"}
+{"id":"m_1494722478637","text":":o\n","timestamp":1494722478637,"threadID":"t_2","threadName":"what is this","authorName":"der michmeister","_id":"Hbc3HgySYTMqzTNU"}
+{"id":"m_1494722629406","text":"hi\n","timestamp":1494722629406,"threadID":"t_1","threadName":"me, myself and i","authorName":"der michmeister","_id":"xUBLtA8WAogYa542"}

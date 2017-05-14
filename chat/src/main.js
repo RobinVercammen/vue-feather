@@ -2,9 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
-import router from './router';
-import store from './store';
+import * as api from './api';
 import filters from './filters';
+import store from './store';
+import { getAllMessages } from './store/actions';
+import { RECEIVE_MESSAGE } from './store/mutation-types';
 
 Vue.config.productionTip = false;
 
@@ -13,8 +15,10 @@ Vue.filter('time', filters.time);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
   store,
-  template: '<App/>',
-  components: { App },
+  render: h => h(App),
 });
+
+api.subscribe(message => store.commit(RECEIVE_MESSAGE, { message }));
+
+getAllMessages(store);

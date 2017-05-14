@@ -1,27 +1,22 @@
-import feathersClient from '../api/client';
-import { SET_MESSAGES } from './mutation-types';
+import * as api from '../api';
+import * as mutations from './mutation-types';
 
-const messageService = feathersClient.service('/message');
+export const getAllMessages = ({ commit }) => {
+  api.getAllMessages().then(messages => {
+    commit(mutations.RECEIVE_ALL, {
+      messages,
+    });
+  });
+};
 
-export const actions = {
-  addMessageAsync(context, newMessage) {
-    messageService.create(newMessage);
-  },
-  getMessagesAsync(context) {
-    messageService
-      .find({
-        query: {
-          $sort: {
-            date: -1,
-          },
-        },
-        paginate: {
-          default: 100,
-          max: 200,
-        },
-      })
-      .then((response) => {
-        context.commit(SET_MESSAGES, response.data);
-      });
-  },
+export const sendMessage = ({ commit }, payload) => {
+  api.createMessage(payload).then(message => {
+    commit(mutations.RECEIVE_MESSAGE, {
+      message,
+    });
+  });
+};
+
+export const switchThread = ({ commit }, payload) => {
+  commit(mutations.SWITCH_THREAD, payload);
 };
